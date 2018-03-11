@@ -1,3 +1,3 @@
 # messageQueue
 
-Applicaion to chandle with message queue using Java language.
+Application to chandle with message queue using Java language.
