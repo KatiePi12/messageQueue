@@ -19,13 +19,29 @@ public class Main {
                 "\t\"var2\": 2,\n" +
                 "\t\"var3\": \"Second string\"\n" +
                 "}");
+        String jsonStringMessageAMGWithExceptionJsonSyntax = new String("{\t\n" +
+                "\t\"type\": \"AMG\",\n" +
+                "\t\"var1\": \"First string\"\n" +
+                "");
+        String jsonStringMessageAMGWithExceptionNoMessageType = new String("{\t\n" +
+                "\t\"type\": \"AMH\",\n" +
+                "\t\"var1\": \"First string\"\n" +
+                "}");
 
         List<String> messagesList = new ArrayList<>();
         messagesList.add(jsonStringMessageAMG);
         messagesList.add(jsonStringMessageAST);
         messagesList.add(jsonStringMessageASL);
 
+//      Examples of exceptions - uncomment to see how it works
+//        messagesList.add(jsonStringMessageAMGWithExceptionJsonSyntax);
+//        messagesList.add(jsonStringMessageAMGWithExceptionNoMessageType);
+
         MessageFactory messageFactory = new MessageFactory();
-        messagesList.forEach(message -> System.out.println(messageFactory.createMessageByType(message).toString()));
+        messagesList.forEach(messageString -> {
+            Message message = messageFactory.createMessageByType(messageString);
+            if(message != null)
+                System.out.println(message.toString());
+        });
     }
 }
