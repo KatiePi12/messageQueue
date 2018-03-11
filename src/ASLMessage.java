@@ -1,7 +1,7 @@
 public class ASLMessage extends Message {
 
     private String var1;
-    private Integer var2;
+    private int var2;
     private String var3;
 
     @Override

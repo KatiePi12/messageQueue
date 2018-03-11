@@ -1,7 +1,7 @@
 public class ASTMessage extends Message {
 
     private String var1;
-    private Integer var2;
+    private int var2;
 
     @Override
     public void read() {
