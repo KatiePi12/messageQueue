@@ -1,5 +1,6 @@
 public class ASTMessage implements MessageInterface {
 
+    private String type;
     private String var1;
     private Integer var2;
 
