@@ -4,7 +4,7 @@ import com.google.gson.JsonParser;
 
 public class MessageFactory {
 
-    public MessageInterface createMessageByType(String jsonMessageString) {
+    public Message createMessageByType(String jsonMessageString) {
 
         JsonObject jsonMessage = new JsonParser().parse(jsonMessageString).getAsJsonObject();
         String messageType = jsonMessage.get("type").getAsString();
